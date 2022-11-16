@@ -1,0 +1,46 @@
+.header {
+}
+.main {
+  min-height: 100vh;
+  padding: 100px;
+  background-color: #fff5ee;
+}
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  background-color: #f7e9ec;
+}
+.one {
+  padding: 0;
+  margin: 0;
+}
+.tabs {
+  max-width: 900px;
+  width: 100%;
+  height: 900px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  background-color: #e6e6e6;
+}
+.tab {
+  max-width: 700px;
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  padding: 0;
+}
+.tab:nth-child(1) {
+  background-color: #f0f8ff;
+}
+
+
+.two {
+}
+.three {
+}
+.four {
+}
+.footer {
+}
