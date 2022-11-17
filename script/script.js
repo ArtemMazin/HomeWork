@@ -24,3 +24,24 @@ tabsParent.addEventListener('click', function(e) {
       }
   })
 })
+
+// ---------------------Colors--------------------------------
+
+const color = document.querySelectorAll('.colors__color');
+
+function generateColor() {
+
+  const hexCode = '0123456789ABCDEF'
+  let colorRandom = '';
+  for (let i = 0; i < 6; i++) {
+    colorRandom += hexCode[Math.floor(Math.random() * hexCode.length)]
+  }
+  return '#' + colorRandom
+}
+
+function setRandomColors() {
+  color.forEach((box) => {
+    box.style.background = generateColor()
+  })
+}
+setRandomColors();
