@@ -17,12 +17,10 @@ hide();
 show();
 
 tabsParent.addEventListener('click', function(e) {
-  tab.forEach((item, i) => {
-    // if (e.target && e.target.classList.contains('tabs__content')) {
+  tabLink.forEach((item, i) => {
       if (e.target == item) {
         hide();
         show(i);
       }
-    // }
   })
 })
