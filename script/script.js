@@ -27,21 +27,25 @@ tabsParent.addEventListener('click', function(e) {
 
 // ---------------------Colors--------------------------------
 
-const color = document.querySelectorAll('.colors__color');
+const color = document.querySelectorAll('.colors__color'),
+      button = document.querySelector('.random-button');
 
 function generateColor() {
-
-  const hexCode = '0123456789ABCDEF'
   let colorRandom = '';
-  for (let i = 0; i < 6; i++) {
-    colorRandom += hexCode[Math.floor(Math.random() * hexCode.length)]
+  for (let i = 0; i < 3; i++) {
+    colorRandom += Math.floor(Math.random() * 255) + ',';
   }
-  return '#' + colorRandom
+  return 'rgb(' + colorRandom.slice(0, colorRandom.length - 1) + ')'
 }
+generateColor();
 
-function setRandomColors() {
+function createColor () {
   color.forEach((box) => {
-    box.style.background = generateColor()
+    box.style.background = generateColor();
+    box.textContent = generateColor();
   })
 }
-setRandomColors();
+createColor();
+button.addEventListener('click', createColor);
+
+// ---------------------------------------------------------------------------
