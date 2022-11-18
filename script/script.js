@@ -7,11 +7,17 @@ const tabLink = document.querySelectorAll('.tabs__link'),
 function hide() {
   tab.forEach(function (e) {
     e.style.display = 'none'; 
+    e.classList.remove('active');
   })
+  tabLink.forEach(function (e) {
+    e.classList.remove('active');
+  }) 
 }
 
 function show(i = 0) {
   tab[i].style.display = 'block'; 
+  tab[i].classList.add('active');
+  tabLink[i].classList.add('active');
 }
 hide();
 show();
@@ -39,10 +45,11 @@ function generateColor() {
 }
 generateColor();
 
-function createColor () {
+function createColor() {
   color.forEach((box) => {
-    box.style.background = generateColor();
-    box.textContent = generateColor();
+    const rgbText = generateColor();
+    box.style.background = rgbText;
+    box.textContent = rgbText;
   })
 }
 createColor();

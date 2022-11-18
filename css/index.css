@@ -8,7 +8,6 @@
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  background-color: #f7e9ec;
 }
 
 .tabs {
@@ -17,7 +16,6 @@
   margin: 0 auto;
   padding: 2%;
   list-style-type: none;
-  background-color: #e6e6e6;
 }
 .tabs__tab {
   max-width: 1100px;
@@ -36,43 +34,26 @@
 }
 .tabs__link {
   height: 30px;
+  width: 60px;
   color: #000;
+  text-align: center;
   text-decoration: none;
   font-size: 25px;
+  border-radius: 5px 5px 0 0;
 }
 .tabs__content {
   max-width: 1100px;
+  border-radius: 10px;
 }
 .random-button {
   width: 100px;
   height: 30px;
-  color: #000;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
 }
-
-.tabs__tab li:nth-child(1) .tabs__content {
-  background-color: #ead2f3;
-}
-.tabs__link:nth-child(1) {
-  background-color: #ead2f3;
-}
-
-.tabs__tab li:nth-child(2) .tabs__content {
-  background-color: #f3f3de;
-}
-.tabs__link:nth-child(2) {
-  background-color: #f3f3de;
-}
-.tabs__tab li:nth-child(3) .tabs__content {
-  background-color: #d2f3e6;
-}
-.tabs__link:nth-child(3) {
-  background-color: #d2f3e6;
-}
-.tabs__tab li:nth-child(4) .tabs__content {
-  background-color: #f3d2d3;
-}
-.tabs__link:nth-child(4) {
-  background-color: #f3d2d3;
+.active {
+  background-color: rgb(199,213,184);
 }
 
  /* ------------------------------------------Coloros--------------------------------------------- */
@@ -88,6 +69,7 @@
   width: 200px;
   height: 180px;
   margin: 10px;
+  border-radius: 5px;
 }
 
 .two {
