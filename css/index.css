@@ -45,12 +45,13 @@
   max-width: 1100px;
   border-radius: 10px;
 }
-.random-button {
+.button {
   width: 100px;
   height: 30px;
   margin: 0 auto;
   display: block;
   border-radius: 5px;
+  font-size: 24px;
 }
 .active {
   background-color: rgb(199,213,184);
@@ -72,11 +73,30 @@
   border-radius: 5px;
 }
 
-.two {
+/* ----------------------------------Slider------------------------------------ */
+
+.slider-wrapper {
+  width: 320px;
+  overflow: hidden;
+  margin: 0 auto;
 }
-.three {
+.slider {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 10px 0;
 }
-.four {
+.slider__image {
+  border-radius: 10px;
 }
+.buttons {
+  display: flex;
+}
+.button-slider-prev {
+}
+.button-slider-next {
+}
+
+
 .footer {
 }

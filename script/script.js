@@ -1,40 +1,40 @@
 'use strict'
 
 const tabLink = document.querySelectorAll('.tabs__link'),
-      tab = document.querySelectorAll('.tabs__content'),
-      tabsParent = document.querySelector('.tabs__links');
+  tab = document.querySelectorAll('.tabs__content'),
+  tabsParent = document.querySelector('.tabs__links');
 
 function hide() {
   tab.forEach(function (e) {
-    e.style.display = 'none'; 
+    e.style.display = 'none';
     e.classList.remove('active');
   })
   tabLink.forEach(function (e) {
     e.classList.remove('active');
-  }) 
+  })
 }
 
 function show(i = 0) {
-  tab[i].style.display = 'block'; 
+  tab[i].style.display = 'block';
   tab[i].classList.add('active');
   tabLink[i].classList.add('active');
 }
 hide();
 show();
 
-tabsParent.addEventListener('click', function(e) {
+tabsParent.addEventListener('click', function (e) {
   tabLink.forEach((item, i) => {
-      if (e.target == item) {
-        hide();
-        show(i);
-      }
+    if (e.target == item) {
+      hide();
+      show(i);
+    }
   })
 })
 
 // ---------------------Colors--------------------------------
 
 const color = document.querySelectorAll('.colors__color'),
-      button = document.querySelector('.random-button');
+  button = document.querySelector('.random-button');
 
 function generateColor() {
   let colorRandom = '';
@@ -55,4 +55,36 @@ function createColor() {
 createColor();
 button.addEventListener('click', createColor);
 
-// ---------------------------------------------------------------------------
+// ----------------------------Slider-----------------------------------------------
+
+const wrapper = document.querySelector('.slider-wrapper'),
+  slider = document.querySelector('.slider'),
+  images = document.querySelectorAll('.slider__image'),
+  btnPrev = document.querySelector('.button__slider-prev'),
+  btnNext = document.querySelector('.button__slider-next'),
+  width = window.getComputedStyle(wrapper).width;
+console.log(width);
+let offset = 0;
+slider.style.width = width.slice(0, width.length - 2) * images.length + 'px';
+images.forEach((e) => {
+  e.style.width = width;
+})
+
+btnNext.addEventListener('click', () => {
+  if (offset == width.slice(0, width.length - 2) * (images.length - 1)) {
+    offset = 0;
+  } else {
+    offset += +width.slice(0, width.length - 2);
+  }
+
+  slider.style.transform = `translateX(-${offset}px)`;
+});
+btnPrev.addEventListener('click', () => {
+  if (offset == 0) {
+    offset = width.slice(0, width.length - 2) * (images.length - 1);
+  } else {
+    offset -= +width.slice(0, width.length - 2);
+  }
+
+  slider.style.transform = `translateX(-${offset}px)`;
+});
