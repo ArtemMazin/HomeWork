@@ -90,5 +90,22 @@ btnPrev.addEventListener('click', () => {
 });
 
 
-// -------------------------------------------------------------------------------------------------
+// -------------------------------Basket------------------------------------------------------------------
 
+const basketCard = document.querySelectorAll('.basket__card'),
+basketBtn = document.querySelectorAll('.basket__btn'),
+basketCards = document.querySelector('.basket__cards'),
+basketCardsBuy = document.querySelector('.basket__cards-buy');
+
+function removeCard(e) {
+  basketBtn.forEach((btn, i) => {
+    if (e.target == btn) {
+      basketBtn[i].remove();
+      basketCardsBuy.prepend(basketCard[i]);
+    }
+  })
+}
+
+basketBtn.forEach((btn) => {
+  btn.addEventListener('click', removeCard);
+})
