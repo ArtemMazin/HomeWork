@@ -63,7 +63,7 @@ const wrapper = document.querySelector('.slider-wrapper'),
   btnPrev = document.querySelector('.button__slider-prev'),
   btnNext = document.querySelector('.button__slider-next'),
   width = window.getComputedStyle(wrapper).width;
-console.log(width);
+
 let offset = 0;
 slider.style.width = width.slice(0, width.length - 2) * images.length + 'px';
 images.forEach((e) => {
@@ -88,3 +88,7 @@ btnPrev.addEventListener('click', () => {
 
   slider.style.transform = `translateX(-${offset}px)`;
 });
+
+
+// -------------------------------------------------------------------------------------------------
+

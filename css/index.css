@@ -47,14 +47,22 @@
 }
 .button {
   width: 100px;
-  height: 30px;
   margin: 0 auto;
+  padding: 5px;
   display: block;
-  border-radius: 5px;
   font-size: 24px;
+  background-color: rgba(212,227,236, 0);
+  border: none;
+  box-shadow: 0 0 8px #000;
+}
+.button:hover {
+  color: #fff5ee;
+  background-color: #000;
+  transition: background-color 2s;
 }
 .active {
-  background-color: rgb(199,213,184);
+  background-color: rgb(200,200,200);
+  padding: 5px 0;
 }
 
  /* ------------------------------------------Coloros--------------------------------------------- */
@@ -71,14 +79,19 @@
   height: 180px;
   margin: 10px;
   border-radius: 5px;
+  box-shadow: 0 0 8px #000;
 }
 
+.random-button {
+
+}
 /* ----------------------------------Slider------------------------------------ */
 
 .slider-wrapper {
-  width: 320px;
+  width: 900px;
   overflow: hidden;
   margin: 0 auto;
+  position: relative;
 }
 .slider {
   list-style-type: none;
@@ -92,9 +105,49 @@
 .buttons {
   display: flex;
 }
-.button-slider-prev {
+@keyframes btnAnimationPrev {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-8px);
+  }
 }
-.button-slider-next {
+@keyframes btnAnimationNext {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(8px);
+  }
+}
+.button__slider-prev {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 7%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(200, 200, 200, 0.8);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 24px;
+  animation: btnAnimationPrev 2s infinite ease-in alternate; 
+}
+.button__slider-next {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 7%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgba(200, 200, 200, 0.8);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 24px;
+  animation: btnAnimationNext 2s infinite ease-in alternate;
 }
 
 
