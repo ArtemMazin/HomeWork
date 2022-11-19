@@ -32,14 +32,7 @@
   justify-content: space-between;
   margin: 0 auto;
 }
-@keyframes rotateStar {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 .tabs__link {
   height: 30px;
   width: 60px;
@@ -48,7 +41,6 @@
   text-decoration: none;
   font-size: 25px;
   border-radius: 5px 5px 0 0;
-  animation: rotateStar infinite 8s alternate ease-in;
 }
 .tabs__content {
   max-width: 1100px;
@@ -191,6 +183,13 @@
   list-style-type: none;
   border-top: 2px solid #000;
 }
-
+.basket__cards-ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  list-style-type: none;
+}
 .footer {
 }

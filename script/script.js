@@ -93,19 +93,52 @@ btnPrev.addEventListener('click', () => {
 // -------------------------------Basket------------------------------------------------------------------
 
 const basketCard = document.querySelectorAll('.basket__card'),
-basketBtn = document.querySelectorAll('.basket__btn'),
-basketCards = document.querySelector('.basket__cards'),
-basketCardsBuy = document.querySelector('.basket__cards-buy');
+  basketBtn = document.querySelectorAll('.basket__btn'),
+  basketCards = document.querySelector('.basket__cards'),
+  basketCardsBuy = document.querySelector('.basket__cards-ul');
 
 function removeCard(e) {
+  let liFirst = document.createElement('li'),
+    liBtn = document.createElement('button');
   basketBtn.forEach((btn, i) => {
     if (e.target == btn) {
-      basketBtn[i].remove();
-      basketCardsBuy.prepend(basketCard[i]);
+      e.target.remove();
+
+
+      basketCardsBuy.append(liFirst);
+      liFirst.append(basketCard[i]);
+      liFirst.append(liBtn);
+      liBtn.innerHTML = 'Удалить';
+      liBtn.classList = 'liButton button';
     }
   })
 }
 
+// function removeCardBasket(e) {
+//   liBtn.forEach((btn, i) => {
+//     if (e.target == btn) {
+//       e.target.remove();
+//       basketCard[i].remove();
+//     }
+//   })
+// }
+
 basketBtn.forEach((btn) => {
   btn.addEventListener('click', removeCard);
+})
+
+
+basketCardsBuy.addEventListener('click', (e) => {
+  if (e.target.className == 'liButton button') {
+
+    const liBtn = document.querySelectorAll('.liButton'),
+          cardsBasket = basketCardsBuy.querySelectorAll('.basket__card');
+
+    liBtn.forEach((btn, i) => {
+      if (e.target == btn) {
+        e.target.remove();
+        cardsBasket[i].remove();
+      }
+    })
+  }
 })
