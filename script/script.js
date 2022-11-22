@@ -135,3 +135,47 @@ document.addEventListener('click', (e) => {
     }
   })
 })
+
+// -------------------------------------Calc----------------------------------
+
+let numberCalcOne = document.querySelector('.tabs__calc1'),
+numberCalcTwo = document.querySelector('.tabs__calc2'),
+tabsParnt = document.querySelector('.tabs__calc'),
+btnCalc = document.querySelector('.tabs__calc-btn'),
+btnMultCalc = document.querySelector('.tabs__mult'),
+btnDivCalc = document.querySelector('.tabs__div'),
+btnAddCalc = document.querySelector('.tabs__add'),
+btnSubCalc = document.querySelector('.tabs__sub'),
+resCalc = document.querySelector('.tabs__calc-result');
+      
+// function calc() {
+
+//   switch (button) {
+//     case 'x':
+//       result = numberCalcOne * numberCalcTwo
+//       break;
+//     case '/':
+//       result = numberCalcOne / numberCalcTwo
+//       break;
+//   }
+//   result = resCalc.innerHTML
+//   console.log(calc())
+// }
+
+tabsParnt.addEventListener('click', (e) => {
+  let result;
+  if (e.target == btnMultCalc) {
+    result = numberCalcOne.value * numberCalcTwo.value;
+    console.log(result);
+    resCalc.innerHTML = result;
+  }
+  // switch (e.target) {
+  //   case 'btnMultCalc':
+  //     result = numberCalcOne * numberCalcTwo
+  //     break;
+  //   case 'btnDivCalc':
+  //     result = numberCalcOne / numberCalcTwo
+  //     break;
+  // }
+  
+})
