@@ -191,5 +191,32 @@
   align-items: flex-start;
   list-style-type: none;
 }
+
+/* -----------------------------------------------Calc------------------------------------- */
+
+.tabs__calc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tabs-input {
+  height: 50px;
+  width: 500px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border: none;
+  box-shadow: 0 0 5px;
+}
+.tabs__btns {
+
+}
+.btn {
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
+  border: none;
+  box-shadow: 0 0 5px;
+}
+
 .footer {
 }

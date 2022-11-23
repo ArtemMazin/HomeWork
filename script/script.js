@@ -145,11 +145,10 @@ const numberCalcOne = document.querySelector('.tabs__calc1'),
       btnMultCalc = document.querySelector('.tabs__mult'),
       btnDivCalc = document.querySelector('.tabs__div'),
       btnAddCalc = document.querySelector('.tabs__add'),
-      btnSubCalc = document.querySelector('.tabs__sub'),
-      resCalc = document.querySelector('.tabs__calc-result');
+      btnSubCalc = document.querySelector('.tabs__sub');
       
 
-let result;
+let result = 0;
 tabsParnt.addEventListener('click', (e) => {
 
   switch (e.target) {
@@ -166,7 +165,9 @@ tabsParnt.addEventListener('click', (e) => {
       result = +numberCalcOne.value - +numberCalcTwo.value
       break;
     case btnCalc:
-      resCalc.innerHTML = result;
+      numberCalcOne.value = result;
+      numberCalcTwo.value = '';
+      break;
   }
   
 })
